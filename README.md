@@ -1,0 +1,2 @@
+# WorksheetPlugin
+WorksheetPlugin for JSPWiki
