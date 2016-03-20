@@ -15,13 +15,13 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- JSPWiki -->
- <dependency>
-      <groupId>org.apache.jspwiki</groupId>
-      <artifactId>jspwiki-war</artifactId>
-      <version>2.10.2</version>
-      <classifier>classes</classifier>
-      <scope>provided</scope>
-    </dependency>
+		<dependency>
+			<groupId>org.apache.jspwiki</groupId>
+			<artifactId>jspwiki-war</artifactId>
+			<version>2.10.2</version>
+			<classifier>classes</classifier>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Apache POI -->
 		<dependency>
@@ -34,6 +34,24 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.14</version>
 		</dependency>
-
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<excludeScope>provided</excludeScope>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
