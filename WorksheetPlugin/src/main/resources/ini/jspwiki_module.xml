@@ -4,6 +4,7 @@
       <author>Christian Froehler</author>
       <minVersion>2.10.2</minVersion>
       <!-- Only the above two lines are required -->
-      <alias>Worksheet</alias>
    </plugin>
 </modules>
+
+
