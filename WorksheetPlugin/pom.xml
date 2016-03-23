@@ -19,7 +19,7 @@
 	<groupId>de.teststory.jspwiki</groupId>
 	<artifactId>WorksheetPlugin</artifactId>
 	<packaging>jar</packaging>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3-284-SNAPSHOT</version>
 	<name>WorksheetPlugin</name>
 	<repositories>
 		<repository>
