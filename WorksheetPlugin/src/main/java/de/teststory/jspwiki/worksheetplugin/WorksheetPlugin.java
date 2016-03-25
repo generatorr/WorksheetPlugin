@@ -89,6 +89,9 @@ public class WorksheetPlugin implements WikiPlugin  {
 			
 			StringBuilder sb = new StringBuilder();
 			ToHtml toHtml = ToHtml.create(wb, sb);
+	        sb.append("<style type=\"text/css\">");
+	        toHtml.printStyles();
+	        sb.append("</style>%n");
 			toHtml.printSheet(sheet);
 			return sb.toString();
 			
