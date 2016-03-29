@@ -19,7 +19,7 @@
 	<groupId>de.teststory.jspwiki</groupId>
 	<artifactId>WorksheetPlugin</artifactId>
 	<packaging>jar</packaging>
-	<version>0.4-SNAPSHOT</version>
+	<version>0.5</version>
 	<name>WorksheetPlugin</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -84,7 +84,24 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<descriptor>src/assembly/dep.xml</descriptor>
+					<finalName>WorksheetPlugin-required-libs-${version}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
