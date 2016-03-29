@@ -19,7 +19,7 @@
 	<groupId>de.teststory.jspwiki</groupId>
 	<artifactId>WorksheetPlugin</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5</version>
+	<version>0.5-284</version>
 	<name>WorksheetPlugin</name>
 	<url>http://maven.apache.org</url>
 	<properties>
