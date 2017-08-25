@@ -1,0 +1,15 @@
+JSPWiki Worksheet Plugin - Release Notes
+
+Homepage:      https://jspwiki-wiki.apache.org/Wiki.jsp?page=WorksheetPlugin
+Source:        https://github.com/generatorr/WorksheetPlugin
+Issue Tracker: https://github.com/generatorr/WorksheetPlugin/issues
+
+v0.6 - 25.08.2017
+issue #3 Long content in table cells breaks layout
+upgrade to Apache POI 3.16 
+  contains a patched version of poi-examples-3.16.jar
+  see https://bz.apache.org/bugzilla/show_bug.cgi?id=61454 for details
+
+v0.5 - 29.03.2016
+issue #1 "%n" string when the plugin is inserted
+issue #2 dependencies.jar contains hidden __MACOSX folder
