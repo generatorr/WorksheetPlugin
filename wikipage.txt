@@ -1,0 +1,83 @@
+[{TableOfContents}]
+\\
+See [ContributedPlugins]
+
+!!Overview
+WorksheetPlugin reads an Excel worksheet, stored as an attachment, and presents its content as a Table. 
+
+An Excel workbook typically contains several sheets; the WorksheetPlugin presents one of the sheets. 
+
+[JSP Wiki Styles|JSPWikiStyle] like {{{%%table-filter}}} can be applied to the output.
+
+The plugin uses [Apache POI|https://poi.apache.org/], a library that offers access to Microsoft Office documents
+using the Java programming language. 
+
+|| Written by | Christian Fröhler
+|| Date | 25-Aug-2017
+|| Plugin Version | 0.6 (for JSPWiki 2.10) ; 0.6-284 (for JSPWiki 2.8)
+|| Wiki Versions | 2.8+; 2.10+
+|| Demo | n/a
+|| Source | [https://github.com/generatorr/WorksheetPlugin]
+|| Issues | [https://github.com/generatorr/WorksheetPlugin/issues]
+|| Plugin | [WorksheetPlugin-0.6.jar|WorksheetPlugin/WorksheetPlugin-0.6.jar] for JSPWiki 2.10+ \\ [WorksheetPlugin-0.6-284.jar|WorksheetPlugin/WorksheetPlugin-0.6-284.jar] for JSPWiki 2.8
+|| Dependencies | [WorksheetPlugin-required-libs-0.5.zip|WorksheetPlugin/WorksheetPlugin-required-libs-0.6.zip]
+
+!!Usage
+* Additional step when upgrading von Worksheet Plugin 0.5 to 0.6: Delete the following files from your {{{<tomcat>/webapps/JSPWiki/WEB-INF/lib}}} directory:
+  \\ {{{curvesapi-1.03.jar
+poi-3.14.jar
+poi-examples-3.14.jar
+poi-ooxml-3.14.jar
+poi-ooxml-schemas-3.14.jar
+poi-scratchpad-3.14.jar
+
+}}}
+* Download the __WorksheetPlugin-required-libs-0.6.zip__ file, and extract into your {{{<tomcat>/webapps/JSPWiki/WEB-INF/lib}}} directory
+* Place the __jar__ file  into your {{{<tomcatDir>/webapps/JSPWiki/WEB-INF/lib/}}} directory (see download links below)
+* Restart your tomcat
+* Attach an Excel document to your page and add the following JSPWiki source:
+{{{
+%%zebra-table
+%%table-filter
+[{WorksheetPlugin src='MyExcelExample.xlsx' sheetName='Sheet1' }]
+/%
+/%
+}}}
+
+!!Parameters
+
+|| Param || Description || Default
+|| {{{src}}} | Name of the attached excel document (mandatory) | 
+|| {{{sheetId}}} | ID of the worksheet within the excel document (first sheet has {{{sheetId}}} = 0) | if both {{{sheetName}}} and {{{sheetId}}} are omitted, the first sheet in the workbook is taken 
+|| {{{sheetName}}} | Name of the worksheet within the excel document | if both {{{sheetName}}} and {{{sheetId}}} are there, sheetId wins
+
+
+
+!!Properties
+n/a
+
+!!Release History
+__v0.6 (for JSPWiki 2.10+), v0.6-284 (for JSPWiki 2.8) (25-Aug-2017)__
+* [issue #3|https://github.com/generatorr/WorksheetPlugin/issues/3|target='_blank'] Long content in table cells breaks layout
+* upgrade to Apache POI 3.16 
+** contains a patched version of poi-examples-3.16.jar
+** see [https://bz.apache.org/bugzilla/show_bug.cgi?id=61454] for details
+__v0.5 (for JSPWiki 2.10+), v0.5-284 (for JSPWiki 2.8) (29-Mar-2016)__
+* fixed two issues from [github tracker|https://github.com/generatorr/WorksheetPlugin/issues?q=is%3Aissue+is%3Aclosed]
+** "%n" string when the plugin is inserted #1
+** dependencies.jar contains hidden {{{__MACOSX}}} folder #2
+__v0.4-alpha (25-Mar-2016)__
+* for JSPWiki 2.10+. 
+* Uses POI's "ToHtml" example class to output the html table; including .css formatting
+__v0.4-284alpha (25-Mar-2016)__
+* for JSPWiki 2.8.2+. 
+* Uses POI's "ToHtml" example class to output the html table; including .css formatting
+
+!! Links
+* [Source repository @ github|https://github.com/generatorr/WorksheetPlugin]
+* [Older releases of WorksheetPlugin|https://github.com/generatorr/WorksheetPlugin/releases] 
+
+[{PageViewPlugin}]
+
+----
+[Category.Plugins]

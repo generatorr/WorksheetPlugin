@@ -19,7 +19,7 @@
 	<groupId>de.teststory.jspwiki</groupId>
 	<artifactId>WorksheetPlugin</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5-284</version>
+	<version>0.6-284</version>
 	<name>WorksheetPlugin</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
@@ -59,17 +59,17 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.14</version>
+			<version>3.16</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.14</version>
+			<version>3.16</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-examples</artifactId>
-			<version>3.14</version>
+			<version>3.16_bug61454</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -103,7 +103,7 @@
 				<version>2.5.3</version>
 				<configuration>
 					<descriptor>src/assembly/dep.xml</descriptor>
-					<finalName>WorksheetPlugin-required-libs-${version}</finalName>
+					<finalName>WorksheetPlugin-required-libs-${project.version}</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 				<executions>
